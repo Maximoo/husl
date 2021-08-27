@@ -1,0 +1,15 @@
+.h-btn{
+	display: inline-block;
+	padding: $gutter $gutter2;
+	&--outline{
+		background: transparent;
+		border: 1px solid color(light);
+		color: color(light);
+		font-weight: bold;
+		transition: all 200ms;
+		&:hover{
+			background-color: color(light);
+			color: theme-color(link);
+		}
+	}
+}

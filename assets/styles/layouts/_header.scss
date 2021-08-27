@@ -1,0 +1,40 @@
+.h-header{
+	height: $header-height;
+	background-color: theme-color(header-bg-1);
+	background: linear-gradient(134.46deg, theme-color(header-bg-1) 0%, theme-color(header-bg-2) 99.07%);
+
+	&__logo{
+		display: block;
+		margin-right: $gutter2;
+		@include media-breakpoint-up(xl) {
+			
+		}
+	}
+
+	&__menu{
+		ul, li{
+			margin: 0;
+			padding: 0;
+		}
+		> ul{
+			display: flex;
+			justify-content: center;
+			> li{
+				height: $header-height;
+				display: inline-block;
+				margin: 0 $gutter;
+				> a{
+					color: theme-color(menu);
+					font-weight: bold;
+					display: block;
+					line-height: $header-height;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+		&__sub{
+			display: none;
+		}
+	}
+}

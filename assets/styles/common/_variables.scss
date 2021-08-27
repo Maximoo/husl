@@ -1,0 +1,83 @@
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1280px
+);
+
+$font-path: 		"../fonts/";
+$image-path:		"../images/";
+
+$font-size-root: 	16px;
+
+$fonts:(
+	futura: 	'Nunito'
+);
+
+$font-serif:    	'Sans-Serif, serif';
+
+$fonts-fallback:(
+	futura: 	$font-serif
+);
+
+$font-weights:(
+	light: 			300,
+	regular: 		400,
+	bold: 			700
+);
+
+$brand-colors:(
+	darkblue: 		#200D59,
+	blue: 			#4279DB,
+	lightblue: 		#82AFFF,
+	gray: 			#ccc,
+	dark: 			#000,
+	light: 			#fff
+);
+
+$alt-colors:(
+	facebook:		#3b5998,
+	twitter:		#55acee,
+	whatsapp:		#43d854,
+	googleplus:		#dc4e41,
+	google:			#ea4335,
+	instagram:		#3f729b,
+	spotify:		#2ebd59,
+	wordpress:		#21759b,
+	youtube:		#cd201f
+);
+
+$colors: map-merge($brand-colors,$alt-colors);
+
+$theme-colors:(
+	header-bg-1: 	color(blue),
+	header-bg-2: 	color(lightblue),
+	menu: 			color(light),
+
+	body-text: 		color(dark),
+	link: 			color(darkblue),
+	primary: 		color(darkblue),
+	secondary: 		color(darkblue)
+);
+
+$link-color: theme-color(link);
+
+$z-indices:(
+	z0: 			0,
+	z1: 			10,
+	z2: 			20,
+	z3: 			30,
+	z4: 			40,
+	z5: 			50,
+	header: 		110,
+	menu:         	120,
+	modal: 			130,
+	loader: 		140
+);
+
+$header-height: 100px;
+$menu_bp: 'xl';
