@@ -83,7 +83,9 @@ $z-indices:(
 );
 
 $header-height: 100px;
+$header-height-small: $header-height - 20px;
 $menu_bp: 'xl';
+$menu_bp_before: 'lg';
 
 $hamburger-layer-width: 35px;
 $hamburger-layer-height: 2px;

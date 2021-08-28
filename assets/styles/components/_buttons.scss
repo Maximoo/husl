@@ -2,7 +2,7 @@
 	display: inline-block;
 	padding: 10px $gutter2;
 	text-align: center;
-	&--outline{
+	&--outline, &--outline-light{
 		background: transparent;
 		border: 1px solid color(light);
 		color: color(light);
@@ -11,6 +11,14 @@
 		&:hover{
 			background-color: color(light);
 			color: theme-color(link);
+		}
+	}
+	&--outline-light{
+		color: theme-color(menu-hover);
+		border: 1px solid color(menu-hover);
+		&:hover{
+			background-color: theme-color(menu-hover);
+			color: color(light);
 		}
 	}
 }

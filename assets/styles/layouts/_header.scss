@@ -1,9 +1,71 @@
-$header-diff-bp: 20px;
-
 body{
-	padding-top: $header-height - $header-diff-bp;
+	padding-top: $header-height-small;
 	@include media-breakpoint-up($menu_bp) {
 		padding-top: $header-height;
+	}
+}
+
+html.nav-open{
+	body, &{
+		overflow: hidden;
+	}
+}
+
+@mixin submenu{
+	width: 100vw;
+    margin: 0;
+    background: color(light);
+    z-index: z(header,-1);
+	box-shadow: 0px 40px 40px -40px rgba(15, 26, 79, 0.3) inset;
+}
+
+@mixin subitem($left: 0){
+	font-size: 1.2rem;
+	font-weight: bold;
+	list-style: none;
+	border-bottom: 1px solid theme-color(menu-border);
+	&:last-child{
+		border-bottom: 0;
+	}
+	position: relative;
+	padding: $gutter $gutter $gutter calc(#{$left} + #{$gutter});
+
+	&:before{
+		content:'';
+		position: absolute;
+		left: calc(#{$left} - 35px);
+		width: 0.76px;
+		height: 30.48px;
+		border: 2px solid theme-color(menu-hover);
+		transform: matrix(0, 1, 1, 0, 0, 0);
+		opacity: 0;
+		transition: opacity 200ms;
+	}
+	&:after{
+		content:'';
+		position: absolute;
+		top: 24.5px;
+		left: calc(#{$left} - 28px);
+		border-color: theme-color(menu-hover);
+		border-style: solid;
+		border-width: 0.2em 0.2em 0 0;
+		display: inline-block;
+		height: 0.55em;
+		transform: rotate(45deg);
+		width: 0.55em;
+		opacity: 0;
+		transition: opacity 200ms;
+	}
+	> a{
+		transition: color 200ms;	
+	}
+	&:hover{
+		&:before, &:after{
+			opacity: 1;
+		}
+		> a{
+			color: theme-color(menu-hover);
+		}
 	}
 }
 
@@ -15,7 +77,7 @@ body{
 	z-index: z(header);
 
 	&__inner{
-		height: $header-height - $header-diff-bp;
+		height: $header-height-small;
 		width: 100%;
 		background-color: theme-color(header-bg-1);
 		background: linear-gradient(134.46deg, theme-color(header-bg-1) 0%, theme-color(header-bg-2) 99.07%);
@@ -32,7 +94,7 @@ body{
 			transition: height 200ms;
 			height: $header-height;
 			.header-scrolled &{
-				height: $header-height - $header-diff-bp;
+				height: $header-height-small;
 			}
 		}
 	}
@@ -52,8 +114,49 @@ body{
 		}
 	}
 
-	&__menu{
-		display: none;
+	@include media-breakpoint-down($menu_bp_before) {
+		%menu{
+			position: fixed;
+		    left: -100%;
+		    top: $header-height-small;
+		    height: calc(100vh - #{$header-height-small});
+		    padding: $gutter4 $gutter;
+		    overflow: hidden;
+			transition: left 200ms;
+			@include submenu;
+			> ul{
+				margin: 0 0 $gutter3 0;
+				padding: 0;
+			}
+		}
+		&__menu{
+			$menu: &;
+			@extend %menu;
+			.nav-open &{
+				left: 0;
+			}
+			&__item{
+				@include subitem(60px);
+			}
+			&__submenu{
+				@extend %menu;
+				#{$menu}__item--open &{
+					left: 0;
+				}
+			}
+			&__subitem{
+				@include subitem(60px);
+				&--back{
+					&:before, &:after{
+						opacity: 1;
+					}
+					&:after{
+						transform: rotate(225deg);
+						left: 10px;
+					}
+				}
+			}
+		}
 	}
 
 	@include media-breakpoint-up($menu_bp) {
@@ -64,6 +167,8 @@ body{
 			> ul{
 				margin: 0;
 				height: 100%;
+				display: flex;
+				justify-content: center;
 			}
 			&__item{
 				height: 100%;
@@ -106,13 +211,8 @@ body{
 			    left: 0;
 			    top: $header-height;
 			    .header-scrolled &{
-					top: $header-height - $header-diff-bp;
+					top: $header-height-small;
 				}
-			    width: 100%;
-			    margin: 0;
-			    background: color(light);
-			    z-index: z(header,-1);
-			    box-shadow: 0px 40px 40px -40px rgba(15, 26, 79, 0.3) inset;
 			    padding: 0 $gutter4;
 			    max-height: 0;
 			    overflow: hidden;
@@ -129,50 +229,12 @@ body{
 					width: 100%;
 					border: 1px solid theme-color(menu-border);
 				}
+				@include submenu;
 			}
 			&__subitem{
-				font-size: 1.2em;
-				font-weight: bold;
-				padding: $gutter 25%;
-				list-style: none;
-				border-bottom: 1px solid theme-color(menu-border);
-				&:last-child{
-					border-bottom: 0;
-				}
-				position: relative;
-				&:before{
-					content:'';
-					position: absolute;
-					left: calc(25% - 35px);
-					width: 0.76px;
-					height: 30.48px;
-					border: 2px solid theme-color(menu-hover);
-					transform: matrix(0, 1, 1, 0, 0, 0);
-					opacity: 0;
-					transition: opacity 200ms;
-				}
-				&:after{
-					content:'';
-					position: absolute;
-					top: calc(50% - 4.5px);
-					left: calc(25% - 28px);
-					border-color: theme-color(menu-hover);
-					border-style: solid;
-					border-width: 0.2em 0.2em 0 0;
-					display: inline-block;
-					height: 0.55em;
-					transform: rotate(45deg);
-					width: 0.55em;
-					opacity: 0;
-					transition: opacity 200ms;
-				}
-				&:hover{
-					&:before, &:after{
-						opacity: 1;
-					}
-					> a{
-						color: theme-color(menu-hover);
-					}
+				@include subitem(25%);
+				&--back{
+					display: none;
 				}
 			}
 		}
@@ -181,14 +243,15 @@ body{
 	&__search-button{
 		margin: 0 $gutter;
 		text-align: center;
-		transition: transform 200ms;
-		&:hover{
-			transform: scale(1.2);
-		}
-		
+		transform: scale(1.2);
 		@include media-breakpoint-up($menu_bp) {
 			margin: 0 $gutter2;
 			flex-grow: 1;
+			transition: transform 200ms;
+			transform: scale(1);
+			&:hover{
+				transform: scale(1.2);
+			}
 		}
 	}
 
@@ -199,7 +262,15 @@ body{
 		}
 	}
 
+	&__call2{
+		display: block;
+		@include media-breakpoint-up($menu_bp) {
+			display: none;
+		}
+	}
+
 	&__trigger{
+		margin-top: $hamburger-layer-spacing;
 		display: block;
 		@include media-breakpoint-up($menu_bp) {
 			display: none;
