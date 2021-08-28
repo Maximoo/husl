@@ -22,3 +22,42 @@
 		}
 	}
 }
+
+.h-btn-colse {
+	width: 32px;
+	height: 32px;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	border: 1px solid transparent;
+	&:focus {
+		outline:0;
+	}
+	&:before, &:after {
+		position: absolute;
+		left: 15px;
+		top: 0;
+		content: ' ';
+		height: 32px;
+		width: 2px;
+		background-color: color(dark);
+	}
+	&--menu{
+		&:before, &:after {
+			transition: background-color 200ms;
+			background-color: theme-color(menu-hover);
+		}
+		&:hover{
+			&:before, &:after {
+				background-color: theme-color(primary);
+			}
+		}
+	}
+	&:before {
+		transform: rotate(45deg);
+	}
+	&:after {
+		transform: rotate(-45deg);
+	}
+}

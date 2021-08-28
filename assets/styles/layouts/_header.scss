@@ -5,9 +5,12 @@ body{
 	}
 }
 
-html.nav-open{
+html.nav-open, html.search-open{
 	body, &{
 		overflow: hidden;
+		@include media-breakpoint-up($menu_bp) {
+			overflow: auto;
+		}
 	}
 }
 
@@ -121,7 +124,7 @@ html.nav-open{
 		    top: $header-height-small;
 		    height: calc(100vh - #{$header-height-small});
 		    padding: $gutter4 $gutter;
-		    overflow: hidden;
+		    overflow: auto;
 			transition: left 200ms;
 			@include submenu;
 			> ul{
@@ -252,6 +255,38 @@ html.nav-open{
 			&:hover{
 				transform: scale(1.2);
 			}
+		}
+	}
+
+	&__search{
+		position: fixed;
+	    top: -100%;
+	    .search-open &{
+		    top: $header-height-small;
+			@include media-breakpoint-up($menu_bp) {
+				top: $header-height;
+			}
+	    }
+	    .header-scrolled.search-open &{
+	    	@include media-breakpoint-up($menu_bp) {
+				top: $header-height-small;
+			}
+		}
+		height: calc(100vh - #{$header-height-small});
+		padding: $gutter4 $gutter;
+		@include media-breakpoint-up($menu_bp) {
+			height: initial;
+			padding: $gutter4;
+		}
+	    transition: top 200ms;
+		@include submenu;
+		form{
+			position: relative;
+		}
+		&__close{
+			position: absolute;
+			right: 0;
+			top: 0;
 		}
 	}
 

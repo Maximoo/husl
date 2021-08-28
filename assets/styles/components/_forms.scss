@@ -1,0 +1,73 @@
+.form-group{
+  position: relative;
+  margin-top: 1.25rem;
+  .control-label {
+    position: absolute;
+    top: 0.25rem;
+    pointer-events: none;
+    padding-left: 0.125rem;
+    z-index: 1;
+    color: theme-color(primary);
+    font-size: 1.5rem;
+    font-weight: normal;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+  }
+  .bar {
+    position: relative;
+    border-bottom: 0.0625rem solid color(gray);
+    display: block;
+  }
+  .bar::before {
+    content: '';
+    height: 0.125rem;
+    width: 0;
+    left: 50%;
+    bottom: -0.0625rem;
+    position: absolute;
+    background: theme-color(primary);
+    -webkit-transition: left 0.28s ease, width 0.28s ease;
+    transition: left 0.28s ease, width 0.28s ease;
+    z-index: 2;
+  }
+  input{
+    display: block;
+    background: none;
+    padding: 0.125rem 0.125rem 0.0625rem;
+    font-size: 1.5rem;
+    border-width: 0;
+    border-color: transparent;
+    line-height: 1.9;
+    height: 2.9rem;
+    width: 100%;
+    color: transparent;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+    box-shadow: none;
+  }
+  input:focus,
+  input:valid,
+  input.form-file,
+  input.has-value{
+    color: theme-color(primary);
+  }
+  input:focus ~ .control-label,
+  input:valid ~ .control-label,
+  input.form-file ~ .control-label,
+  input.has-value ~ .control-label{
+    font-size: 0.8rem;
+    color: theme-color(primary);
+    top: -1rem;
+    left: 0;
+  }
+  input:focus{
+    outline: none;
+  }
+  input:focus ~ .control-label{
+    color: theme-color(primary);
+  }
+  input:focus ~ .bar::before{
+    width: 100%;
+    left: 0;
+  }
+}
