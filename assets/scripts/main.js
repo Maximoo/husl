@@ -19,6 +19,17 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        var scroll_header = function(){
+          $('html').toggleClass('header-scrolled', $(window).scrollTop() > 100);
+        };
+        setInterval(scroll_header,100);
+        scroll_header();
+
+        $('.h-header__trigger').click(function(){
+          var aux = $('html').hasClass('nav-open');
+          $('html').toggleClass('nav-open',!aux);
+          $('.h-header__trigger').toggleClass('is-active',!aux);
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

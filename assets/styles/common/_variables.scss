@@ -34,7 +34,8 @@ $brand-colors:(
 	darkblue: 		#200D59,
 	blue: 			#4279DB,
 	lightblue: 		#82AFFF,
-	gray: 			#ccc,
+	gray: 			#E9EEF2,
+	turquoise: 		#38E5C4,
 	dark: 			#000,
 	light: 			#fff
 );
@@ -57,6 +58,8 @@ $theme-colors:(
 	header-bg-1: 	color(blue),
 	header-bg-2: 	color(lightblue),
 	menu: 			color(light),
+	menu-border: 	color(gray),
+	menu-hover: 	color(turquoise),
 
 	body-text: 		color(dark),
 	link: 			color(darkblue),
@@ -81,3 +84,7 @@ $z-indices:(
 
 $header-height: 100px;
 $menu_bp: 'xl';
+
+$hamburger-layer-width: 35px;
+$hamburger-layer-height: 2px;
+$hamburger-layer-color: theme-color(menu);

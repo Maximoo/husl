@@ -1,6 +1,7 @@
 .h-btn{
 	display: inline-block;
-	padding: $gutter $gutter2;
+	padding: 10px $gutter2;
+	text-align: center;
 	&--outline{
 		background: transparent;
 		border: 1px solid color(light);

@@ -9,51 +9,74 @@
 <body>
 	
 	<header class="h-header">
-		<div class="container d-flex justify-content-start align-items-center">
-		    <a href="/" class="h-header__logo">
-		        <img class="ing-fluid" src="./dist/images/placeholder-logo.png" alt="HUSL Example">
-		    </a>
-		    <nav class="h-header__menu flex-grow-1">
-				<ul>
-					<li>
-						<a href="#">Industries</a>
-						<ul class="h-header__menu__sub">
-							<li>
-								<a href="#">Financial Services</a>
-							</li>
-							<li>
-								<a href="#">Healthcare</a>
-							</li>
-							<li>
-								<a href="#">Government</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">Solutions</a>
-					</li>
-					<li>
-						<a href="#">Enterprise Class AI</a>
-					</li>
-					<li>
-						<a href="#">Knowledge Center</a>
-					</li>
-					<li>
-						<a href="#">Company</a>
-					</li>
-				</ul>		      
-		    </nav>
-			
-			<a href="#" id="search-button" class="h-search-button mx-2 mx-xl-4 flex-grow-1 text-center">
-			    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" clip-rule="evenodd" d="M11.8451 11.7646C14.3628 9.2469 14.3628 5.16496 11.8451 2.6473C9.32744 0.12963 5.24549 0.12963 2.72783 2.6473C0.210161 5.16496 0.210161 9.2469 2.72783 11.7646C5.24549 14.2822 9.32744 14.2822 11.8451 11.7646Z" stroke="white" stroke-width="1.25"/>
-					<path d="M12.0122 11.9317L18.0904 18.0099" stroke="white" stroke-width="1.25"/>
-				</svg>
-			</a>
+		<div class="h-header__inner">
+			<div class="container d-flex justify-content-start align-items-center">
+			    <a href="/" class="h-header__logo">
+			        <img class="ing-fluid" src="./dist/images/placeholder-logo.png" alt="HUSL Example">
+			    </a>
+			    <nav class="h-header__menu flex-grow-1">
+					<ul class="d-flex justify-content-center">
+						<li  class="h-header__menu__item h-header__menu__item--has-sub">
+							<a href="#">Industries</a>
+							<ul class="h-header__menu__submenu">
+								<li  class="h-header__menu__subitem">
+									<a href="#">Financial Services</a>
+								</li>
+								<li  class="h-header__menu__subitem">
+									<a href="#">Healthcare</a>
+								</li>
+								<li  class="h-header__menu__subitem">
+									<a href="#">Government</a>
+								</li>
+							</ul>
+						</li>
+						<li  class="h-header__menu__item">
+							<a href="#">Solutions</a>
+						</li>
+						<li  class="h-header__menu__item">
+							<a href="#">Enterprise Class AI</a>
+						</li>
+						<li  class="h-header__menu__item">
+							<a href="#">Knowledge Center</a>
+						</li>
+						<li  class="h-header__menu__item">
+							<a href="#">Company</a>
+						</li>
+					</ul>		      
+			    </nav>
+				
+				<a href="#" id="search-button" class="h-header__search-button">
+				    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M11.8451 11.7646C14.3628 9.2469 14.3628 5.16496 11.8451 2.6473C9.32744 0.12963 5.24549 0.12963 2.72783 2.6473C0.210161 5.16496 0.210161 9.2469 2.72783 11.7646C5.24549 14.2822 9.32744 14.2822 11.8451 11.7646Z" stroke="white" stroke-width="1.25"/>
+						<path d="M12.0122 11.9317L18.0904 18.0099" stroke="white" stroke-width="1.25"/>
+					</svg>
+				</a>
 
-		    <a href="#" class="mx-2 mx-xl-4 h-btn h-btn--outline text-uppercase">Request a Demo</a>
+			    <a href="#" class="h-header__call1 mx-2 mx-xl-4 h-btn h-btn--outline text-uppercase">Request a Demo</a>
+
+			    <button class="h-header__trigger hamburger hamburger--collapse" type="button">
+				  <span class="hamburger-box">
+				    <span class="hamburger-inner"></span>
+				  </span>
+				</button>
+			</div>
 		</div>
 	</header>
+
+	<main class="container py-5 text-justify">
+		<section>
+			
+			<h1>HUSL Example</h1>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum?</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum?</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum?</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius inventore alias enim modi aliquid veritatis aut assumenda numquam eum. Doloribus laborum voluptas dignissimos repellat, minus iusto veniam qui quisquam eum?</p>
+		</section>
+	</main>
 
 	<script type='text/javascript' src='./dist/scripts/main.js'></script>
 </body>
